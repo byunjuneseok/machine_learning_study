@@ -2,6 +2,10 @@
 
 #  1시간만에 GAN(Generative Adversarial Network) 완전 정복하기
 
+**1시간만에 GAN(Generative Adversarial Network) 완전 정복하기** (*https://www.youtube.com/watch?v=odpjk7_tGY0&t=2839s*) 의 노트입니다.
+
+
+
 ## Probability DIstribution (확률 분포)
 
 실제 이미지에 대한 확률 분포(확률밀도함수)가 존재할 때 아래의 분포를 갖는다고 가정한다면,
@@ -233,7 +237,7 @@ Discriminator가 해야하는 테스크가 2가지가 있습니다.
 
 2. Training with fake images
 
-   ![acgan03](/home/byun/repos/machine_learning_study/Generative_adversarial_Network_1hour_session/img/acgan03.png)
+   ![acgan03](img/acgan03.png)
 
    > Generator에 2에 해당하는 one-hot 벡터를 입력하면 가짜 이미지를 생성해내고, Discreminator는 이 이미지를 가짜라고 판단해야 합니다. 그럼에도 불구하고 Discreminator는 가짜이미지를 2로 분류해내야 합니다. 여태까지의 GAN은 Generator에 집중을 했지만, ACGAN은 Discreminator에 집중을 한다. **Generator는 Data Augmentation하는 역할을 하고  노이즈가 포함된 데이터를 입력하더라도 Classification이 되면 Discriminator의 성능이 좋아진게 아닌가.**
 
@@ -289,15 +293,15 @@ Latent code를 받지 않고 Real Image를 받게 됩니다. *Encoder & Decoder*
 
 그래서 저해상도의 이미지를 upscale하는 방법을 택함.
 
-![stack03](/home/byun/repos/machine_learning_study/Generative_adversarial_Network_1hour_session/img/stack03.png)
+![stack03](img/stack03.png)
 
 ##### Latest Work
 
-![stack04](/home/byun/repos/machine_learning_study/Generative_adversarial_Network_1hour_session/img/stack04.png)
+![stack04](img/stack04.png)
 
 
 
-![stack05](/home/byun/repos/machine_learning_study/Generative_adversarial_Network_1hour_session/img/stack05.png)
+![stack05](img/stack05.png)
 
 
 
@@ -323,7 +327,7 @@ Reconstruction Loss : batch normalization 이 아니라 VT Normalization이 GAN�
 4. X와  G(z)를 빼서 L2 Loss(Reconstruction Loss)를 계산합니다.
 5. 계산한 Loss를 Back propagation하고
 6. *Generator를 학습하는 게 아니라 z값을 학습하는 중*
-7. G(z)와 X가 비슷해지도록 z를 학습하는 것. (Gradient Descent를 활용하여)![began02](/home/byun/repos/machine_learning_study/Generative_adversarial_Network_1hour_session/img/began02.png)
+7. G(z)와 X가 비슷해지도록 z를 학습하는 것. (Gradient Descent를 활용하여)![began02](img/began02.png)
 
 > 단점이 바로 보인다. **z를 학습해야한다.** (배보다 배꼽이 더 크게 된다.)
 >
@@ -335,7 +339,7 @@ Reconstruction Loss : batch normalization 이 아니라 VT Normalization이 GAN�
 
 *좀 더 좋은 Up-sampling 방법을 찾아야되지 않을까* 
 
-! [dec01](img/dec01.png)
+![began02](img/dec01.png)
 
 > 이런 식이면 불균형한 Output을 만들게 된다. (검은색(4) - 진회색 (2)- 회색(1))
 
